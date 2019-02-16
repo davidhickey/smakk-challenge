@@ -34,6 +34,16 @@
   {% include 'style-tags', layout: 'theme' %}
   {% include 'css-variables' %}
 
+
+  {{ 'global.css' | asset_url | stylesheet_tag }}
+  {% if template == 'collection.product-archive' %}
+  {{ 'product-archive.css' | asset_url | stylesheet_tag }}
+  {%endif%}
+
+
+
+
+
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', '');
 
@@ -64,6 +74,7 @@
 
   <main role="main" id="MainContent">
     <h1>Hello World</h1>
+    <a href="/collections/frontpage">Gravity Collection</a>
     {{ content_for_layout }}
   </main>
 
