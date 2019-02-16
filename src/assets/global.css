@@ -4,15 +4,94 @@
 a{
   text-decoration: none;
 }
+body{
+  margin: 0;
+}
 ul{
   list-style-type: none;
 }
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 
 
 /* grid styles */
 .xl{
   max-width: 1440px;
 }
+.col-one-half{
+  width: 50%;
+}
+.col-one-third{
+  width: 33.3333333%;
+}
+.col-whole{
+  width: 100%;
+}
+
+.s-one-half,
+.s-one-third,
+.s-whole{
+
+}
+.m-one-half,
+.m-one-third,
+.m-whole{
+
+}
+.xl-one-half,
+.xl-one-third,
+.xl-whole{
+}
+
+/* Breakpoint grid */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .s-whole{
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .m-one-half{
+    width: 50%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .xl-one-third{
+    width: 33.3333333%
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+
+
+
 
 /* horizontal spacing styles */
 
@@ -32,6 +111,9 @@ ul{
 
 .center-grid{
   margin: 0 auto;
+}
+.inline{
+  display: inline-block;
 }
 
 

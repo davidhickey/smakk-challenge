@@ -1,12 +1,20 @@
 {% paginate collection.products by 24 %}
   <header role="banner" class="orange text-white">
     <div class="xl center-grid">
-    <h1>{{ collection.title }}</h1>
-    {% if collection.description != blank %}
-      <div class="rte">
-        {{ collection.description }}
-      </div>
-    {% endif %}
+      <div class="flex-row">
+        <div class="inline col-one-half">
+          <h1>{{ collection.title }}</h1>
+          {% if collection.description != blank %}
+            <div class="rte">
+              {{ collection.description }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="inline col-one-half">
+          img placed here
+        </div>
+    </div>
+
 
     {% if collection.all_tags.size > 0 %}
       <ul>
@@ -27,9 +35,9 @@
   </header>
 
   <div class="white">
-    <div class="xl center-grid">
+    <div class="xl center-grid flex-wrap">
     {% for product in collection.products %}
-      <div>
+      <div class="inline xl-one-third m-one-half s-whole">
         {% if product.featured_image != blank %}
           <a href="{{ product.url | within: collection }}">
             {% include 'responsive-image' with
