@@ -1,4 +1,5 @@
-<footer>
+<footer class="dark-blue text-white">
+  <div class="xl center-grid">
 
   {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
   <ul>
@@ -44,6 +45,7 @@
   <div>
     <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
   </div>
+</div>
 </footer>
 
 {% schema %}

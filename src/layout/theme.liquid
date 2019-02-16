@@ -67,14 +67,9 @@
 </head>
 
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
-
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
-
   {% section 'header' %}
-
   <main role="main" id="MainContent">
-    <h1>Hello World</h1>
-    <a href="/collections/frontpage">Gravity Collection</a>
     {{ content_for_layout }}
   </main>
 

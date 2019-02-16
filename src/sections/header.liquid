@@ -10,7 +10,8 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<section data-section-id="{{ section.id }}" data-section-type="header">
+<section data-section-id="{{ section.id }}" data-section-type="header" class="orange text-white">
+  <div class="xl center-grid top-pad">
   {%- if section.settings.announcement_bar_enabled -%}
     <div>
       {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
@@ -38,7 +39,7 @@
                 srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
                 alt="{{ section.settings.logo.alt | default: shop.name }}">
           {% else %}
-            {{ shop.name }}
+            <h1>Gravity</h1>
           {% endif %}
         </a>
     {% if template.name == 'index' %}
@@ -125,6 +126,7 @@
       {% endfor %}
     </ul>
   </nav>
+</div>
 </section>
 
 {% if section.settings.logo != blank %}
