@@ -2,7 +2,8 @@
   <header role="banner" class="orange text-white">
     <div class="xl center-grid">
       <div class="flex-row">
-        <div class="inline col-one-half">
+        <div class="inline col-one-half left-pad hero-pad-right">
+          <div class="hero-pad-top hero-text-pad-right">
           <h1>{{ collection.title }}</h1>
           {% if collection.description != blank %}
             <div class="rte">
@@ -10,8 +11,13 @@
             </div>
           {% endif %}
         </div>
+        </div>
         <div class="inline col-one-half">
-          img placed here
+          {% if collection.image %}
+            <img src="{{ collection | img_url: 'original' }}"  alt="{{ collection.title | escape }}"/>
+          {% else %}
+            <img src="{{ collection.products.first | img_url: 'small' }}"  alt="{{ collection.title | escape }}"/>
+          {% endif %}
         </div>
     </div>
 

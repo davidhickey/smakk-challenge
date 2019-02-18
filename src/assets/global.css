@@ -85,6 +85,9 @@ ul{
 .top-pad{
   padding-top: 60px;
 }
+.bot-pad{
+  padding-bottom: 60px;
+}
 .no-top-pad{
   padding-top: 0;
 }

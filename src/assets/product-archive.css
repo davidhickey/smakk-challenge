@@ -4,3 +4,14 @@
 body{
   background-color: #F96241;
 }
+
+.hero-pad-right{
+  padding-right: 120px;
+}
+.hero-pad-top{
+  padding-top: 120px;
+}
+
+.hero-text-pad-right{
+  padding-right: 80px;
+}
