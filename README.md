@@ -6,6 +6,7 @@ Link to dev-theme: (https://smakk-challenge.myshopify.com/collections/frontpage)
 - HTML5/CSS3
 - Liquid
 - JS/ES6
+- Slate(Shopify build tool)
 
 ## Files that contain my code:
 - layout/theme.liquid
