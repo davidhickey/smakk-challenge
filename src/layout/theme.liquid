@@ -41,9 +41,6 @@
   {%endif%}
 
 
-
-
-
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', '');
 
@@ -75,5 +72,8 @@
 
   {% section 'footer' %}
 
+  {% if template == 'collection.product-archive' %}
+  {{ 'product-archive.js' | asset_url | script_tag }}
+  {%endif%}
 </body>
 </html>

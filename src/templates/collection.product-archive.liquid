@@ -12,15 +12,16 @@
           {% endif %}
         </div>
         </div>
-        <div class="inline col-one-half">
+        <div class="inline col-one-half right">
           {% if collection.image %}
-            <img src="{{ collection | img_url: 'original' }}"  alt="{{ collection.title | escape }}"/>
+            <img class="hero-image-right" src="{{ collection | img_url: 'original' }}"  alt="{{ collection.title | escape }}"/>
           {% else %}
             <img src="{{ collection.products.first | img_url: 'small' }}"  alt="{{ collection.title | escape }}"/>
           {% endif %}
         </div>
     </div>
 
+  </div>
   <div class="dark-blue flex-row">
     <div class="col-whole right-pad left-pad right sort-height">
       <span>
@@ -48,58 +49,72 @@
       {% endif %}
     </div>
   </div>
-
-  </div>
   </header>
 
   <div class="white">
-    <div class="xl center-grid flex-wrap">
+    <div class="xl center-grid flex-wrap top-pad">
     {% for product in collection.products %}
-      <div class="inline xl-one-third m-one-half s-whole">
-        {% if product.featured_image != blank %}
-          <a href="{{ product.url | within: collection }}">
-            {% include 'responsive-image' with
-              image: product.featured_image,
-              max_width: 700,
-              max_height: 800
-            %}
-          </a>
-        {% endif %}
-
-        <p>
-          <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-        </p>
-        <p>
-          {% if product.compare_at_price > product.price %}
-
-            {% if product.price_varies %}
-              {%- assign sale_price = product.price | money -%}
-              {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-            {% else %}
-              {{ 'products.product.on_sale' | t }}
-              {{ product.price | money }}
+      <div class="inline xl-one-third m-one-half s-whole card">
+        <div class="border-orange prod-grid-pad">
+          <div>
+            {% if product.featured_image != blank %}
+              <a href="{{ product.url | within: collection }}">
+                {% include 'responsive-image' with
+                  image: product.featured_image,
+                  max_width: 700,
+                  max_height: 800
+                %}
+              </a>
             {% endif %}
+          </div>
+          <div>
+            <p class="inline">
+              <a href="{{ product.url | within: collection }}" class="text-orange">{{ product.title }}</a>
+            </p>
+            <p class="inline text-orange">
+              {% if product.compare_at_price > product.price %}
 
-          {% else %}
+                {% if product.price_varies %}
+                  {%- assign sale_price = product.price | money -%}
+                  {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+                {% else %}
+                  {{ 'products.product.on_sale' | t }}
+                  {{ product.price | money }}
+                {% endif %}
 
-            {% if product.price_varies %}
-              {%- assign price = product.price | money -%}
-              {{ 'products.product.from_text_html' | t: price: price }}
-            {% else %}
-              {{ product.price | money }}
-            {% endif %}
+              {% else %}
 
-          {% endif %}
+                {% if product.price_varies %}
+                  {%- assign price = product.price | money -%}
+                  {{ 'products.product.from_text_html' | t: price: price }}
+                {% else %}
+                  {{ product.price | money }}
+                {% endif %}
 
-          {% if product.compare_at_price > product.price %}
-            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-            <s>{{ product.compare_at_price | money }}</s>
-          {% endif %}
+              {% endif %}
 
-          {% unless product.available %}
-            {{ 'products.product.sold_out' | t }}
-          {% endunless %}
-        </p>
+              {% if product.compare_at_price > product.price %}
+                <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                <s>{{ product.compare_at_price | money }}</s>
+              {% endif %}
+
+              {% unless product.available %}
+                {{ 'products.product.sold_out' | t }}
+              {% endunless %}
+            </p>
+            <div>
+                <button class="text-white orange">BUY NOW</button>
+            </div>
+            <div>
+              <div class="text-orange learn-more">
+                Learn More
+              </div>
+              <div class="hide text-dark-blue learn-more-details">
+                {{product.description}}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     {% else %}

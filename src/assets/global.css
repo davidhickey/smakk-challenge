@@ -130,18 +130,18 @@ a{
 .text-dark-blue{
   color: #102938;
 }
-
 .orange{
   background-color: #F96241;
 }
 .text-orange{
   color: #F96241;
 }
-
+.border-orange{
+  border: solid 1px #F96241;
+}
 .white{
   background-color: white;
 }
-
 .text-white{
   color: white;
 }

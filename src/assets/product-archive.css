@@ -5,6 +5,7 @@ body{
   background-color: #F96241;
 }
 
+/* HERO/HEADER SECTION */
 .hero-bot-pad{
   padding-bottom: 80px;
 }
@@ -17,8 +18,20 @@ body{
 .hero-inner-text-right-pad{
   padding-right: 80px;
 }
+.hero-image-right{
+  position: relative;
+  right: 0;
+}
 
-
+/* SORT SECTION */
 .sort-height{
   height: 74px;
+}
+.sort-bot-margin{
+  margin-bottom: 60px;
+}
+
+/* PRODUCT GRID SECTION */
+.prod-grid-pad{
+  margin: 0 10px 40px 10px;
 }
