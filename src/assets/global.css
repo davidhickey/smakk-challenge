@@ -11,6 +11,10 @@ ul{
   list-style-type: none;
 }
 
+/* grid styles */
+.xl{
+  max-width: 1440px;
+}
 .flex-col{
   display: flex;
   flex-direction: column;
@@ -23,14 +27,6 @@ ul{
   display: flex;
   flex-wrap: wrap;
 }
-
-
-
-
-/* grid styles */
-.xl{
-  max-width: 1440px;
-}
 .col-one-half{
   width: 50%;
 }
@@ -39,21 +35,6 @@ ul{
 }
 .col-whole{
   width: 100%;
-}
-
-.s-one-half,
-.s-one-third,
-.s-whole{
-
-}
-.m-one-half,
-.m-one-third,
-.m-whole{
-
-}
-.xl-one-half,
-.xl-one-third,
-.xl-whole{
 }
 
 /* Breakpoint grid */
@@ -89,31 +70,50 @@ ul{
 
 }
 
-
-
-
-
 /* horizontal spacing styles */
+.left-pad{
+  padding-left: 250px;
+}
+.right-pad{
+  padding-right: 250px;
+}
+.list-left-pad{
+  padding-left: 30px;
+}
 
 /* vertical spacing styles */
 .top-pad{
   padding-top: 60px;
 }
-
-
+.no-top-pad{
+  padding-top: 0;
+}
+.no-top-margin{
+  margin-top: 0;
+}
+.no-bot-margin{
+  margin-bottom: 0;
+}
 
 /* positioning styles */
-
 .center-text{
   margin: 0 auto;
   text-align: center;
 }
-
+.right{
+    text-align: right;
+}
 .center-grid{
   margin: 0 auto;
 }
 .inline{
   display: inline-block;
+}
+/* positions element to immediate left of parent */
+.out-left{
+  position: relative;
+  right: 100%;
+  text-align: right;
 }
 
 
@@ -142,3 +142,23 @@ ul{
 
 
 /* font styles */
+
+
+
+
+/* Navigation aligment */
+.nav-middle-align{
+  height: 40px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+
+/* Hidden Elements */
+#search{
+  display: none;
+}
+#log-in-container{
+  display: none;
+}

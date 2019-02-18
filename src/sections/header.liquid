@@ -11,7 +11,7 @@
   - Home page only: only shows on the home page
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header" class="orange text-white">
-  <div class="xl center-grid top-pad flex-row">
+  <div class="xl center-grid top-pad flex-row left-pad right-pad">
   {%- if section.settings.announcement_bar_enabled -%}
     <div>
       {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
@@ -30,7 +30,7 @@
     {% if template.name == 'index' %}
       <h1>
     {% else %}
-      <div class="h1">
+      <div class="h1 out-left">
     {% endif %}
         <a href="/" class="logo-image">
           {% if section.settings.logo != blank %}
@@ -39,7 +39,7 @@
                 srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
                 alt="{{ section.settings.logo.alt | default: shop.name }}">
           {% else %}
-            <h1>Gravity</h1>
+            <h1 class="text-white no-top-margin no-bot-margin nav-middle-align">Gravity</h1>
           {% endif %}
         </a>
     {% if template.name == 'index' %}
@@ -47,39 +47,7 @@
     {% else %}
       </div>
     {% endif %}
-
-    <a href="/cart">
-      {% include 'icon-cart' %}
-      {{ 'layout.cart.title' | t }}
-      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
-    </a>
-
-    {% if shop.customer_accounts_enabled %}
-      <ul>
-        {% if customer %}
-          <li>
-            {% if customer.first_name != blank %}
-              {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-              {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
-            {% else %}
-              <a href="/account">{{ 'layout.customer.account' | t }}</a>
-            {% endif %}
-          </li>
-          <li>
-            {{ 'layout.customer.log_out' | t | customer_logout_link }}
-          </li>
-        {% else %}
-          <li>
-            {{ 'layout.customer.log_in' | t | customer_login_link }}
-          </li>
-          <li>
-            {{ 'layout.customer.create_account' | t | customer_register_link }}
-          </li>
-        {% endif %}
-      </ul>
-    {% endif %}
-
-    <form action="/search" method="get" role="search">
+    <form action="/search" method="get" role="search" id="search">
       <label for="Search-{{ section.id }}" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
       </label>
@@ -97,19 +65,19 @@
     </form>
   </header>
 
-  <nav role="navigation" class="inline col-one-half">
-    <ul>
-      {% for link in linklists[section.settings.menu].links %}
+  <nav role="navigation" class="inline col-one-half right">
+    <ul class="no-top-margin nav-middle-align">
+      {% for link in linklists.main-menu.links %}
         {% if link.links != blank %}
-          <li>
-            <a href="{{ link.url }}">
+          <li class="inline list-left-pad">
+            <a href="{{ link.url }}" class="text-white">
               {{ link.title }}
               {% include 'icon-arrow-down' %}
             </a>
             <ul>
               {% for childlink in link.links %}
                 <li>
-                  <a href="{{ childlink.url }}">
+                  <a href="{{ childlink.url }}" class="text-white">
                     {{ childlink.title }}
                   </a>
                 </li>
@@ -117,13 +85,49 @@
             </ul>
           </li>
         {% else %}
-          <li>
-            <a href="{{ link.url }}">
+          <li class="inline list-left-pad">
+            <a href="{{ link.url }}" class="text-white">
               {{ link.title }}
             </a>
           </li>
         {% endif %}
       {% endfor %}
+      <li class="inline list-left-pad">
+        <a href="" class="text-white">My Account</a>
+      </li>
+      <li class="inline list-left-pad" id="log-in-container">
+        {% if shop.customer_accounts_enabled %}
+          <ul>
+            {% if customer %}
+              <li>
+                {% if customer.first_name != blank %}
+                  {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+                  {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+                {% else %}
+                  <a href="/account">{{ 'layout.customer.account' | t }}</a>
+                {% endif %}
+              </li>
+              <li>
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              </li>
+            {% else %}
+              <li>
+                {{ 'layout.customer.log_in' | t | customer_login_link }}
+              </li>
+              <li>
+                {{ 'layout.customer.create_account' | t | customer_register_link }}
+              </li>
+            {% endif %}
+          </ul>
+        {% endif %}
+      </li>
+      <li class="inline list-left-pad">
+        <a href="/cart" class="text-white">
+          <!-- {% include 'icon-cart' %} -->
+          {{ 'layout.cart.title' | t }}
+          <!-- ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }}) -->
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
