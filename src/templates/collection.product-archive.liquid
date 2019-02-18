@@ -30,7 +30,7 @@
           <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6923 21.9231H17.3077V19.6154H12.6923V21.9231ZM4.61539 8.07692V10.3846H25.3846V8.07692H4.61539ZM8.07693 16.1538H21.9231V13.8462H8.07693V16.1538Z" fill="#F4F5F4"/>
         </svg>
       </span>
-      <span class="text-white fira font-size-sort letter-spacing-far line-height-sort">
+      <span class="text-white fira font-size-sort letter-space-far line-height-sort">
         SORT BY
       </span>
       {% if collection.all_tags.size > 0 %}
@@ -38,11 +38,11 @@
         <ul class="sort-option-list dark-blue">
           {% for tag in collection.all_tags %}
             {% if current_tags contains tag %}
-              <li class="active text-white fira">
+              <li class="active text-white fira letter-space-far">
                 {{ tag | link_to_remove_tag: tag }}
               </li>
             {% else %}
-              <li class="text-white fira">
+              <li class="text-white fira letter-space-far">
                 {{ tag | link_to_tag: tag }}
               </li>
             {% endif %}
@@ -56,7 +56,7 @@
   </header>
 
   <div class="white">
-    <div class="prod-grid xl center-grid flex-wrap top-pad left-pad right-pad">
+    <div class="prod-grid xl center-grid flex-wrap top-pad left-pad right-pad off-white">
     {% for product in collection.products %}
       <div class="inline xl-one-third m-one-half s-whole prod-grid-card">
         <div class="border-orange prod-grid-pad">

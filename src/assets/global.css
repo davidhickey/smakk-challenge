@@ -26,6 +26,10 @@ ul{
 a{
   text-decoration: none;
 }
+a:hover,
+button:hover{
+  opacity: .8;
+}
 .hide{
   display: none;
 }
@@ -213,6 +217,9 @@ a{
 }
 .text-white{
   color: white;
+}
+.off-white{
+  background-color: #FBFBFB;
 }
 
 /* Typography Styles */

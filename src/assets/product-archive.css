@@ -94,16 +94,23 @@ header:hover img.hero-image-right{
 .sort-options-container{
   text-align: right;
 }
+.sort-dropdown:hover svg{
+  opacity: .8;
+}
 .sort-option-list{
   width: 200px;
   display: inline-block;
-  margin-top: -20px;
+  margin-top: 0px;
   padding-right: 10px;
   padding-bottom: 10px;
+}
+.sort-option-list li{
+  padding-top: 10px;
 }
 .sort-option-list a{
   font-family: 'Fira Sans', sans-serif;
   color: white;
+  letter-spacing: 1.5px;
 }
 .line-height-sort{
   line-height: 74px;
@@ -118,9 +125,7 @@ header:hover img.hero-image-right{
   .line-height-sort{
     line-height: 50px;
   }
-  .sort-option-list{
-    margin-top: -10px;
-  }
+
 }
 
 /* PRODUCT GRID SECTION */
@@ -164,6 +169,10 @@ header:hover img.hero-image-right{
 }
 .prod-grid-title-overflow{
   position: absolute;
+}
+.prod-grid .learn-more:hover,
+.prod-grid .learn-more-close:hover{
+  opacity: .8;
 }
 /* Breakpoints for product grid columns */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
