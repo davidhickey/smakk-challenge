@@ -1,51 +1,87 @@
 <footer class="dark-blue text-white">
-  <div class="xl center-grid">
+  <div class="xl center-grid left-pad right-pad footer-pad-top-bottom flex-row">
+    <div class="col-two-third right-pad">
+      <div class="footer-text-pad-bot">
+        Our weekly email has you covered.
+      </div>
+        <div class="footer-text-pad-bot">
+          <form action="">
+            <div class="flex-row">
+              <input type="text" placeholder="Enter Your Email" name="email" required class="inline col-three-quarter footer-sign-up-pad-left">
+                <button type="submit" class="footer-sign-up-btn inline col-one-quarter text-white orange">SIGN UP</button>
+            </div>
+          </form>
+        </div>
+      <div>
+        {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+        <div class="social-sharing">
+          {% for social in social_accounts %}
+            {%- assign social_handle = social | handleize -%}
+            {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+            {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
 
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+          {% if settings[social_link] != blank %}
+          <a class="text-white footer-social-right-margin" href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
             {% include social_icon %}
             <span class="icon-fallback-text">{{ social }}</span>
           </a>
-        </li>
-      {% endif %}
+          {% endif %}
+          {% endfor %}
+          {% if settings.share_twitter %}
+            <a class="text-white footer-social-right-margin" target="_blank" href="//twitter.com/share?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: share_permalink }}">
+              {% include 'icon-twitter' %}
+              <span class="visually-hidden">{{ 'general.social.alt_text.share_on_twitter' | t }}</span>
+            </a>
+          {% endif %}
+          {% if settings.share_facebook %}
+            <a class="text-white footer-social-right-margin" target="_blank" href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}">
+              {% include 'icon-facebook' %}
+              <span class="visually-hidden">{{ 'general.social.alt_text.share_on_facebook' | t }}</span>
+            </a>
+          {% endif %}
+        </div>
+        {% if section.settings.show_payment_icons %}
+          {% unless shop.enabled_payment_types == empty %}
+            <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
+            <ul class="payment-icons">
+              {% for type in shop.enabled_payment_types %}
+                <li>
+                  {{ type | payment_type_svg_tag: class: 'icon' }}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endunless %}
+        {% endif %}
+        <div class="hide">
+          {%- assign footer_linklist = section.settings.footer_linklist -%}
+          {% if linklists[footer_linklist].links.size > 0 %}
+            <ul>
+              {% for link in linklists[footer_linklist].links %}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
 
-    {% endfor %}
-  </ul>
-
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
-          <li>
-            {{ type | payment_type_svg_tag: class: 'icon' }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endunless %}
-  {% endif %}
-
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+        <div class="hide">
+          <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+        </div>
+    </div>
+    </div>
+    <div class="col-one-third">
+      <div>
+        <p class="no-top-margin">Get in touch.</p>
+      </div>
+      <div>
+        <p>
+          Some people say it. We mean it.
+          Big event coming up?
+          Need style advice or help finding your fit?
+          We’re here.
+        </p>
+      </div>
+    </div>
   </div>
-</div>
 </footer>
 
 {% schema %}
