@@ -3,7 +3,7 @@
     <div class="xl center-grid">
       <div class="flex-row hero-bot-pad">
         <div class="inline col-one-half left-pad hero-text-right-pad">
-          <div class="hero-text-top-pad hero-inner-text-right-pad">
+          <div class="hero-text-top-pad">
           <h1 class="fira-bold font-size-l letter-space-near line-height-l">{{ collection.title }}</h1>
           {% if collection.description != blank %}
             <div class="rte fira font-size-m opaque line-height-m">
@@ -25,11 +25,11 @@
   <div class="dark-blue flex-row">
     <div class="col-whole right-pad left-pad right sort-height">
       <span>
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="sort-icon">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6923 21.9231H17.3077V19.6154H12.6923V21.9231ZM4.61539 8.07692V10.3846H25.3846V8.07692H4.61539ZM8.07693 16.1538H21.9231V13.8462H8.07693V16.1538Z" fill="#F4F5F4"/>
         </svg>
       </span>
-      <span class="text-white fira font-size-m letter-spacing-far">
+      <span class="text-white fira font-size-sort letter-spacing-far">
         SORT BY
       </span>
       {% if collection.all_tags.size > 0 %}

@@ -11,7 +11,7 @@
   - Home page only: only shows on the home page
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header" class="orange text-white">
-  <div class="xl center-grid top-pad flex-row left-pad right-pad bot-pad">
+  <div class="xl center-grid top-pad flex-row left-pad bot-pad">
   {%- if section.settings.announcement_bar_enabled -%}
     <div>
       {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
@@ -66,10 +66,10 @@
   </header>
 
   <nav role="navigation" class="inline col-one-half right">
-    <ul class="no-top-margin nav-middle-align">
+    <ul class="no-top-margin nav-middle-align no-left-pad">
       {% for link in linklists.main-menu.links %}
         {% if link.links != blank %}
-          <li class="inline list-left-pad">
+          <li class="inline list-right-pad">
             <a href="{{ link.url }}" class="text-white fira font-size-m">
               {{ link.title }}
               {% include 'icon-arrow-down' %}
@@ -85,17 +85,17 @@
             </ul>
           </li>
         {% else %}
-          <li class="inline list-left-pad">
+          <li class="inline list-right-pad">
             <a href="{{ link.url }}" class="text-white fira font-size-m">
               {{ link.title }}
             </a>
           </li>
         {% endif %}
       {% endfor %}
-      <li class="inline list-left-pad">
+      <li class="inline list-right-pad">
         <a href="" class="text-white fira font-size-m">My Account</a>
       </li>
-      <li class="inline list-left-pad" id="log-in-container">
+      <li class="inline list-right-pad" id="log-in-container">
         {% if shop.customer_accounts_enabled %}
           <ul>
             {% if customer %}

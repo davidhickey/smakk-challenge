@@ -89,8 +89,8 @@ a{
 .right-pad{
   padding-right: 250px;
 }
-.list-left-pad{
-  padding-left: 30px;
+.list-right-pad{
+  padding-right: 40px;
 }
 
 /* vertical spacing styles */
@@ -103,12 +103,16 @@ a{
 .no-top-pad{
   padding-top: 0;
 }
+.no-left-pad{
+  padding-left: 0;
+}
 .no-top-margin{
   margin-top: 0;
 }
 .no-bot-margin{
   margin-bottom: 0;
 }
+
 
 /* positioning styles */
 .relative{
@@ -138,6 +142,10 @@ a{
   position: relative;
   right: 100%;
   text-align: right;
+}
+.sort-icon{
+  top: 8px;
+  position: relative;
 }
 
 
@@ -179,7 +187,6 @@ a{
   font-family: 'Fira Sans', sans-serif;
   font-weight: 600;
 }
-
 /* font size styles */
 .font-size-l{
   font-size: 48px;
@@ -189,6 +196,9 @@ a{
 }
 .font-size-s{
   font-size: 13px;
+}
+.font-size-sort{
+  font-size: 16px;
 }
 .font-size-footer{
   font-size: 36px;
@@ -203,8 +213,6 @@ a{
 .letter-space-sign-up{
   letter-spacing: .5px;
 }
-
-
 /* line-height style */
 .line-height-l{
   line-height: 70px;
@@ -218,24 +226,16 @@ a{
 .line-height-footer{
   line-height: 47px;
 }
-
 /* misc. font styles */
 .opaque{
   opacity: .8;
 }
 
 
-
-
-
-
-
-/* Hover States */
+/* Hover styles */
 .pointer{
   cursor: pointer;
 }
-
-
 
 /* Navigation aligment */
 .nav-middle-align{
@@ -253,7 +253,6 @@ a{
 }
 
 /* Footer styles */
-
 .footer-pad-top-bottom{
   padding-top: 40px;
   padding-bottom: 40px;
