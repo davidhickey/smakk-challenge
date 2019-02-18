@@ -111,6 +111,9 @@ a{
 }
 
 /* positioning styles */
+.relative{
+  position: relative;
+}
 .center-text{
   margin: 0 auto;
   text-align: center;
@@ -161,8 +164,69 @@ a{
   color: white;
 }
 
+/* Typography Styles */
+/* font family styles */
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
 
-/* font styles */
+.fira{
+  font-family: 'Fira Sans', sans-serif;
+}
+.fira-mono{
+  font-family: 'Fira Mono', monospace;
+}
+.fira-bold{
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 600;
+}
+
+/* font size styles */
+.font-size-l{
+  font-size: 48px;
+}
+.font-size-m{
+  font-size: 18px;
+}
+.font-size-s{
+  font-size: 13px;
+}
+.font-size-footer{
+  font-size: 36px;
+}
+/* letter spacing styles */
+.letter-space-near{
+  letter-spacing: -1px;
+}
+.letter-space-far{
+  letter-spacing: 1.5px;
+}
+.letter-space-sign-up{
+  letter-spacing: .5px;
+}
+
+
+/* line-height style */
+.line-height-l{
+  line-height: 70px;
+}
+.line-height-m{
+  line-height: 28px;
+}
+.line-height-s{
+  line-height: 15px;
+}
+.line-height-footer{
+  line-height: 47px;
+}
+
+/* misc. font styles */
+.opaque{
+  opacity: .8;
+}
+
+
+
+
 
 
 

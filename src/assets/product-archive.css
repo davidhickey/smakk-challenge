@@ -44,7 +44,6 @@ body{
   padding-right: 15px;
   padding-bottom: 20px;
 }
-
 .prod-grid-text-top-pad{
   padding-top: 20px;
 }
@@ -61,4 +60,17 @@ body{
   line-height: 40px;
   border: none;
   font-weight: bold;
+}
+
+.prod-grid-dropdown{
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  background-color: white;
+  border: solid 1px #F96241;
+  border-top: none;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
