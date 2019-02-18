@@ -24,29 +24,33 @@
   </div>
   <div class="dark-blue flex-row">
     <div class="col-whole right-pad left-pad right sort-height">
-      <span>
+      <div>
+      <span class="sort-dropdown pointer">
         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="sort-icon">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6923 21.9231H17.3077V19.6154H12.6923V21.9231ZM4.61539 8.07692V10.3846H25.3846V8.07692H4.61539ZM8.07693 16.1538H21.9231V13.8462H8.07693V16.1538Z" fill="#F4F5F4"/>
         </svg>
       </span>
-      <span class="text-white fira font-size-sort letter-spacing-far">
+      <span class="text-white fira font-size-sort letter-spacing-far line-height-sort">
         SORT BY
       </span>
       {% if collection.all_tags.size > 0 %}
-        <ul class="hide">
+      <div class="hide sort-options-container">
+        <ul class="sort-option-list dark-blue">
           {% for tag in collection.all_tags %}
             {% if current_tags contains tag %}
-              <li class="active">
+              <li class="active text-white fira">
                 {{ tag | link_to_remove_tag: tag }}
               </li>
             {% else %}
-              <li>
+              <li class="text-white fira">
                 {{ tag | link_to_tag: tag }}
               </li>
             {% endif %}
           {% endfor %}
         </ul>
+      </div>
       {% endif %}
+    </div>
     </div>
   </div>
   </header>

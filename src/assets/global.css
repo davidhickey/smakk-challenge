@@ -226,6 +226,9 @@ a{
 .line-height-footer{
   line-height: 47px;
 }
+.line-height-sort{
+  line-height: 74px;
+}
 /* misc. font styles */
 .opaque{
   opacity: .8;
@@ -250,6 +253,22 @@ a{
 }
 #log-in-container{
   display: none;
+}
+
+/* Sort Styles */
+.sort-options-container{
+  text-align: right;
+}
+.sort-option-list{
+  width: 200px;
+  display: inline-block;
+  margin-top: -20px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.sort-option-list a{
+  font-family: 'Fira Sans', sans-serif;
+  color: white;
 }
 
 /* Footer styles */
