@@ -26,7 +26,7 @@
     </div>
   {%- endif -%}
 
-  <header role="banner" class="inline col-one-half">
+  <header role="banner" class="inline col-one-half col-one-quarter-m-down">
     {% if template.name == 'index' %}
       <h1>
     {% else %}
@@ -65,7 +65,7 @@
     </form>
   </header>
 
-  <nav role="navigation" class="inline col-one-half right">
+  <nav role="navigation" class="inline col-one-half col-three-quarter-m-down right">
     <ul class="no-top-margin nav-middle-align no-left-pad">
       {% for link in linklists.main-menu.links %}
         {% if link.links != blank %}
@@ -121,8 +121,8 @@
           </ul>
         {% endif %}
       </li>
-      <li class="inline list-left-pad">
-        <a href="/cart" class="text-white">
+      <li class="inline list-right-pad">
+        <a href="/cart" class="text-white fira font-size-m">
           <!-- {% include 'icon-cart' %} -->
           {{ 'layout.cart.title' | t }}
           <!-- ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }}) -->

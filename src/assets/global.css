@@ -1,5 +1,21 @@
 /* global.css */
 
+/* This stylesheet styles all pages on site. It is ordered by the following categories: */
+/*
+- global
+- grid
+- horizontal spacing
+- vertical spacing
+- positioning
+- color
+- Typography
+- Hover
+- hidden
+- Navigation
+- footer
+ */
+
+
 /* global styles */
 body{
   margin: 0;
@@ -42,45 +58,29 @@ a{
 .col-one-quarter{
   width: 25%;
 }
+.col-one-quarter-m{
+
+}
 .col-three-quarter{
   width: 75%;
 }
 .col-whole{
   width: 100%;
 }
-
-/* Breakpoint grid */
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .s-whole{
-    width: 100%;
+@media only screen and (max-width: 992px){
+  .col-one-quarter-m-down{
+    width: 25%
+  }
+  .col-three-quarter-m-down{
+    width: 75%
+  }
+}
+@media only screen and (max-width: 600px){
+  .col-whole-s-down{
+    width: 100%
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .m-one-half{
-    width: 50%;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .xl-one-third{
-    width: 33.3333333%
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
-}
 
 /* horizontal spacing styles */
 .left-pad{
@@ -91,6 +91,39 @@ a{
 }
 .list-right-pad{
   padding-right: 40px;
+}
+@media only screen and (max-width: 1380px) {
+  .left-pad{
+    padding-left: 150px;
+  }
+  .right-pad{
+    padding-right: 150px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .left-pad{
+    padding-left: 50px;
+  }
+  .right-pad{
+    padding-right: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .left-pad{
+    padding-left: 30px;
+  }
+  .right-pad{
+    padding-right: 30px;
+  }
+  .list-right-pad{
+    padding-right: 0px;
+    padding-left: 20px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .list-right-pad{
+    padding-left: 10px;
+  }
 }
 
 /* vertical spacing styles */
@@ -111,6 +144,14 @@ a{
 }
 .no-bot-margin{
   margin-bottom: 0;
+}
+@media only screen and (max-width: 768px) {
+  .top-pad{
+    padding-top: 30px;
+  }
+  .bot-pad{
+    padding-bottom: 30px;
+  }
 }
 
 
@@ -143,11 +184,13 @@ a{
   right: 100%;
   text-align: right;
 }
-.sort-icon{
-  top: 8px;
-  position: relative;
-}
 
+@media only screen and (max-width: 1200px) {
+  .out-left{
+    right: 0;
+    text-align: left;
+  }
+}
 
 /* color styles */
 .dark-blue{
@@ -176,7 +219,6 @@ a{
 /* font family styles */
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono');
-
 .fira{
   font-family: 'Fira Sans', sans-serif;
 }
@@ -197,11 +239,17 @@ a{
 .font-size-s{
   font-size: 13px;
 }
-.font-size-sort{
-  font-size: 16px;
-}
 .font-size-footer{
   font-size: 36px;
+}
+/* tablet screen-sizes */
+@media only screen and (max-width: 992px) {
+  .font-size-l{
+    font-size: 38px;
+  }
+  .font-size-footer{
+    font-size: 26px;
+  }
 }
 /* letter spacing styles */
 .letter-space-near{
@@ -226,25 +274,20 @@ a{
 .line-height-footer{
   line-height: 47px;
 }
-.line-height-sort{
-  line-height: 74px;
+/* tablet screen-sizes */
+@media only screen and (max-width: 992px) {
+  .line-height-l{
+    line-height: 50px;
+  }
 }
 /* misc. font styles */
 .opaque{
   opacity: .8;
 }
 
-
 /* Hover styles */
 .pointer{
   cursor: pointer;
-}
-
-/* Navigation aligment */
-.nav-middle-align{
-  height: 40px;
-  display: table-cell;
-  vertical-align: middle;
 }
 
 /* Hidden Elements */
@@ -255,20 +298,22 @@ a{
   display: none;
 }
 
-/* Sort Styles */
-.sort-options-container{
-  text-align: right;
+/* Navigation aligment */
+.nav-middle-align{
+  height: 40px;
+  display: table-cell;
+  vertical-align: middle;
 }
-.sort-option-list{
-  width: 200px;
-  display: inline-block;
-  margin-top: -20px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-}
-.sort-option-list a{
-  font-family: 'Fira Sans', sans-serif;
-  color: white;
+@media only screen and (max-width: 992px) {
+  nav{
+    padding-right: 50px;
+    text-align: right;
+  }
+  .nav-middle-align{
+    display: block;
+    margin-bottom: 0;
+    line-height: 40px;
+  }
 }
 
 /* Footer styles */

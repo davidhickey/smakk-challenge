@@ -1,4 +1,5 @@
 /* product-archive.css */
+/* This stylesheet applies specific styling to collection.product-archive.liquid and is organized from top of page to bottom. */
 
 /* fixes issue with non-html spacing between header and collection */
 body{
@@ -22,19 +23,107 @@ body{
   position: relative;
   right: 0;
 }
+/* Hero Hover styles */
+header img.hero-image-right{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 2s linear;
+  -webkit-transition: visibility 1s, opacity 2s linear;
+  -moz-transition: visibility 1s, opacity 2s linear;
+  -o-transition: visibility 1s, opacity 2s linear;
+}
+header:hover img.hero-image-right{
+  visibility: visible;
+  opacity: 1;
+}
+@media only screen and (max-width: 1380px) {
+  .collection-title{
+    margin-top: 0;
+  }
+  .hero-text-right-pad{
+    padding-right: 60px;
+  }
+  .hero-text-top-pad{
+    padding-top: 30px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hero-text-top-pad{
+    padding-top: 0;
+  }
+  header img.hero-image-right{
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero-bot-pad{
+    padding-bottom: 40px;
+  }
+  .hero-text-right-pad{
+    padding-right: 10px;
+  }
+  .hero .col-one-half{
+    display: block;
+    width: 100%
+  }
+  .hero .font-size-l{
+    font-size: 28px;
+  }
+  .hero .font-size-m{
+    font-size: 14px;
+  }
+  .hero .line-height-l{
+    line-height: 38px;
+  }
+}
 
 /* SORT SECTION */
 .sort-height{
   height: 74px;
+  z-index: 1;
 }
 .sort-bot-margin{
   margin-bottom: 60px;
 }
+.sort-icon{
+  top: 8px;
+  position: relative;
+}
+.sort-options-container{
+  text-align: right;
+}
+.sort-option-list{
+  width: 200px;
+  display: inline-block;
+  margin-top: -20px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.sort-option-list a{
+  font-family: 'Fira Sans', sans-serif;
+  color: white;
+}
+.line-height-sort{
+  line-height: 74px;
+}
+.font-size-sort{
+  font-size: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .sort-height{
+    height: 50px;
+  }
+  .line-height-sort{
+    line-height: 50px;
+  }
+  .sort-option-list{
+    margin-top: -10px;
+  }
+}
 
 /* PRODUCT GRID SECTION */
-.prod-grid-card{
-  max-width: 300px;
-}
 .prod-grid-pad{
   margin: 0 10px 40px 10px;
 }
@@ -61,7 +150,6 @@ body{
   border: none;
   font-weight: bold;
 }
-
 .prod-grid-dropdown{
   position: absolute;
   top: 18px;
@@ -73,4 +161,30 @@ body{
   margin-right: -16px;
   padding-left: 15px;
   padding-right: 15px;
+}
+.prod-grid-title-overflow{
+  position: absolute;
+}
+/* Breakpoints for product grid columns */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .xl-one-third{
+    width: 33.3333333%
+  }
+}
+/* Medium to Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 992px) and (min-width: 600px) {
+  .m-one-half{
+    width: 50%;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .s-whole{
+    width: 100%;
+  }
 }
