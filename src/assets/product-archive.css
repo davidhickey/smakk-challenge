@@ -5,13 +5,20 @@ body{
   background-color: #F96241;
 }
 
-.hero-pad-right{
+.hero-bot-pad{
+  padding-bottom: 80px;
+}
+.hero-text-right-pad{
   padding-right: 120px;
 }
-.hero-pad-top{
+.hero-text-top-pad{
   padding-top: 120px;
 }
-
-.hero-text-pad-right{
+.hero-inner-text-right-pad{
   padding-right: 80px;
+}
+
+
+.sort-height{
+  height: 74px;
 }

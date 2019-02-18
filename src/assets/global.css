@@ -1,23 +1,22 @@
 /* global.css */
 
 /* global styles */
-a{
-  text-decoration: none;
-}
 body{
   margin: 0;
 }
 ul{
   list-style-type: none;
 }
+a{
+  text-decoration: none;
+}
+.hide{
+  display: none;
+}
 
 /* grid styles */
 .xl{
   max-width: 1440px;
-}
-.flex-col{
-  display: flex;
-  flex-direction: column;
 }
 .flex-row{
   display: flex;
@@ -26,6 +25,10 @@ ul{
 .flex-wrap{
   display: flex;
   flex-wrap: wrap;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
 }
 .col-one-half{
   width: 50%;
