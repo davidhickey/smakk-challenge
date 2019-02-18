@@ -36,6 +36,12 @@ a{
 .col-one-third{
   width: 33.3333333%;
 }
+.col-one-quarter{
+  width: 25%;
+}
+.col-three-quarter{
+  width: 75%;
+}
 .col-whole{
   width: 100%;
 }
@@ -109,13 +115,19 @@ a{
 .right{
     text-align: right;
 }
+.left{
+  text-align: left;
+}
+.center{
+  text-align: center;
+}
 .center-grid{
   margin: 0 auto;
 }
 .inline{
   display: inline-block;
 }
-/* positions element to immediate left of parent */
+  /* positions element to immediate left of parent */
 .out-left{
   position: relative;
   right: 100%;
@@ -149,6 +161,12 @@ a{
 
 /* font styles */
 
+
+
+/* Hover States */
+.pointer{
+  cursor: pointer;
+}
 
 
 

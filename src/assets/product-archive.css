@@ -32,6 +32,34 @@ body{
 }
 
 /* PRODUCT GRID SECTION */
+.prod-grid-card{
+  max-width: 300px;
+}
 .prod-grid-pad{
   margin: 0 10px 40px 10px;
+}
+.prod-grid-text-pad{
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+
+.prod-grid-text-top-pad{
+  padding-top: 20px;
+}
+
+.prod-grid-text-below-pad{
+  padding-bottom: 20px;
+}
+.prod-grid-no-margin{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.prod-grid-buy{
+  width: 170px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  font-weight: bold;
 }

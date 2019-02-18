@@ -52,9 +52,9 @@
   </header>
 
   <div class="white">
-    <div class="xl center-grid flex-wrap top-pad">
+    <div class="xl center-grid flex-wrap top-pad left-pad right-pad">
     {% for product in collection.products %}
-      <div class="inline xl-one-third m-one-half s-whole card">
+      <div class="inline xl-one-third m-one-half s-whole prod-grid-card">
         <div class="border-orange prod-grid-pad">
           <div>
             {% if product.featured_image != blank %}
@@ -67,11 +67,12 @@
               </a>
             {% endif %}
           </div>
-          <div>
-            <p class="inline">
+          <div class="prod-grid-text-pad">
+            <div class="flex-row prod-grid-text-below-pad">
+            <p class="inline col-three-quarter left prod-grid-no-margin">
               <a href="{{ product.url | within: collection }}" class="text-orange">{{ product.title }}</a>
             </p>
-            <p class="inline text-orange">
+            <p class="inline text-orange col-one-quarter right prod-grid-no-margin">
               {% if product.compare_at_price > product.price %}
 
                 {% if product.price_varies %}
@@ -102,14 +103,20 @@
                 {{ 'products.product.sold_out' | t }}
               {% endunless %}
             </p>
-            <div>
-                <button class="text-white orange">BUY NOW</button>
+          </div>
+            <div class="center prod-grid-text-below-pad">
+              <a href="{{ product.url | within: collection }}">
+                <button class="text-white orange prod-grid-buy">BUY NOW</button>
+              </a>
             </div>
             <div>
-              <div class="text-orange learn-more">
+              <div class="text-orange learn-more center pointer">
                 Learn More
               </div>
-              <div class="hide text-dark-blue learn-more-details">
+              <div class="hide text-dark-blue learn-more-details center">
+                <div class="learn-more-close prod-grid-text-top-pad orange-text pointer">
+                  Close X
+                </div>
                 {{product.description}}
               </div>
             </div>
