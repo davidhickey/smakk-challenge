@@ -1,4 +1,41 @@
 ##
+This is a coding challenge I completed recently that utilizes Shopify's Slate build tool. </br>
+Link to dev-theme: (https://smakk-challenge.myshopify.com/collections/frontpage)
+
+## Techologies used:
+- HTML5/CSS3
+- Liquid
+- JS/ES6
+- Slate(Shopify build tool)
+
+## Files that contain my code:
+- layout/theme.liquid
+- templates/collection.product-archive.liquid
+- sections/Header.liquid
+- section/Footer.liquid
+- assets/global.css
+- assets/product-archive.css
+- assets/product-archive.js
+
+## Quirks/Unfinished tasks:
+- page elements are coded responsively up until smartphone, except for product grid(1 col on smartphones, 2 on tablets, 3 on laptop and up)
+  - if I had more time, I'd like to stack the elements in the collection hero container for smartphone. I'd also like to build a tablet/smartphone friendly menu icon that displays links on click through a sliding right-hand sidebar navigation.
+- Shopify "Sections" are under-utilized
+  - If I had more time, I'd like to experiment and build out customizable components for the header and footer that would allow clients to have greater customization for adding copy, color, fonts, and sizing to their storefront.
+- "Sort" menu is limited to sorting by product tag
+  - If I had more time, I'd like to build out an ansychronous JS program that allows for users to sort by tags, price, color etc without a full page reload. This could be accomplished by rendering products within this collection through Shopify's collection API, turning each into an object that exposes tags/price/color etc. Then, based on the filter or filters selected, I could hide/show/re-organize the delivery of products to the product grid.
+
+## Breakdown of Build:
+total hours spent: 10.5hrs
+- review task and psuedo code template components and shared classes (1 hr)
+- build initial HTML skeleton with proper spacing for desktop (2 hr)
+- build css classes w/ breakpoints for responsiveness and add to html (1hr)
+- build js onclick hide/show functionality for sort and product descriptions (30min)
+- add color, typography, copy and assets (1 hr)
+- implement small and moderate changes to get to final product (4 hr)
+- write read.me and commit final changes (1hr)
+
+##
 
 This empty theme is scaffoled from the Shopify starter theme and slate.
 
