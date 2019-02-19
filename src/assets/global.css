@@ -188,7 +188,6 @@ button:hover{
   right: 100%;
   text-align: right;
 }
-
 @media only screen and (max-width: 1200px) {
   .out-left{
     right: 0;
@@ -305,7 +304,7 @@ button:hover{
   display: none;
 }
 
-/* Navigation aligment */
+/* Navigation(Header) aligment */
 .nav-middle-align{
   height: 40px;
   display: table-cell;

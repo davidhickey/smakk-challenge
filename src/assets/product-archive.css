@@ -25,15 +25,13 @@ body{
 }
 /* Hero Hover styles */
 header img.hero-image-right{
-  visibility: hidden;
   opacity: 0;
-  transition: visibility 1s, opacity 2s linear;
-  -webkit-transition: visibility 1s, opacity 2s linear;
-  -moz-transition: visibility 1s, opacity 2s linear;
-  -o-transition: visibility 1s, opacity 2s linear;
+  transition: opacity 2s linear;
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
 }
-header:hover img.hero-image-right{
-  visibility: visible;
+body:hover img.hero-image-right{
   opacity: 1;
 }
 @media only screen and (max-width: 1380px) {
